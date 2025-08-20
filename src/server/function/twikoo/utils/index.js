@@ -111,7 +111,8 @@ const fn = {
           12: 'Monterey',
           13: 'Ventura',
           14: 'Sonoma',
-          15: 'Sequoia'
+          15: 'Sequoia',
+          16: 'Tahoe'
         }[majorPlatformVersion]
       } else if (os.name === 'Android') {
         const majorPlatformVersion = os.version.split('.')[0]
@@ -214,7 +215,7 @@ const fn = {
       return comment.avatar
     } else {
       const gravatarCdn = config.GRAVATAR_CDN || 'weavatar.com'
-      let defaultGravatar = gravatarCdn === 'weavatar.com' ? `letter&letter=${comment.nick.charAt(0)}` : 'identicon'
+      let defaultGravatar = `initials&name=${comment.nick}`
       if (config.DEFAULT_GRAVATAR) {
         defaultGravatar = config.DEFAULT_GRAVATAR
       }
